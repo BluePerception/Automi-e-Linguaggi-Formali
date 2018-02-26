@@ -1,0 +1,54 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[english, italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[xindy]{imakeidx}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{etaremune}
+\usepackage{enumitem}
+\usepackage[toc,page]{appendix}
+\usepackage{verbatimbox}
+
+\usepackage[hidelinks, colorlinks=true]{hyperref}	
+\usepackage{bookmark}
+\usepackage{caption}
+\usepackage{subfig}
+
+\captionsetup{tableposition=top, figureposition=bottom, font=small}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+\usepackage{epigraph}
+
+
+\makeindex
+
+
+\includeonly{
+			Sezioni/Introduzione,%
+			Sezioni/DFA,
+			}		
+		
+\begin{document}
+
+\title{Automi e Linguaggi Formali}
+\author{Sara Feltrin}
+\date{26-02-18}
+
+\maketitle
+
+
+
+\newpage
+
+\hypersetup{linkcolor=blue, urlcolor=blue}
+
+\include{Sezioni/Introduzione}
+\include{Sezioni/DFA}
+
+
+\end{document} 
