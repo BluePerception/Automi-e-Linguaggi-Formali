@@ -1,0 +1,24 @@
+\chapter{Automi stati finiti non deterministici}
+E un automa che può trovarsi contemporaneamente in più stati diversi e le 
+transizioni non devono per forze essere complete, per esempio: 
+(immagine)
+Infatti questo non può essere un DFA perchè da q0 se leggo 0 posso trovarmi
+contemporaneamente in q0 e q1, in più da q1 posso muovermi solo in q2 e da q2
+non posso proprio muovermi.
+Un automa a stati finiti non deterministici(NFA) è una quintupla $A=(Q, \Sigma, \delta,
+q0, F)$ dove
+\begin{itemize}
+\item Q è un insieme finito di stati;
+\item $\Sigma$ è un alfabeto finito;
+\item $\delta$ è una funzione di transizione che prende in input (q,a) e restituisce
+un sottoinsieme di Q;
+\item q0 \in Q è lo stato iniziale;
+\item F \in Q è un insieme di stati finali;
+\end{itemize}
+Anche per i NFA abbiamo una definizione rigorosa:
+\begin{itemize}
+\item base: $\delta'(q, \varepsilon)={q}$
+\item induzione: $\delta'(q,w)=\cup \delta(p,a)$
+\end{itemize}
+Data una parola, il nostro automa potrà trovarsi in uno dei tanti stadi
+che siamo andati a calcolare.
