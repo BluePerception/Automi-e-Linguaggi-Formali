@@ -1,5 +1,5 @@
 \chapter{Automi stati finiti non deterministici}
-E un automa che può trovarsi contemporaneamente in più stati diversi e le 
+È un automa che può trovarsi contemporaneamente in più stati diversi e le 
 transizioni non devono per forze essere complete, per esempio: 
 
 \begin{figure}[h]
@@ -22,9 +22,9 @@ restituisce un sottoinsieme di Q;
 \end{itemize}
 Anche per i NFA abbiamo una definizione rigorosa:
 \begin{itemize}
-\item \textbf{base}: $\widehat{\delta}(q, \varepsilon)={q}$
+\item \textbf{base}: $\widehat{\delta}(q, \varepsilon)={q}$;
 \item \textbf{induzione}: $\widehat{\delta}(q,w)=\bigcup_{p \in \delta 
-(\widehat{q},x)}^{} \delta(p,a)$
+(\widehat{q},x)}^{} \delta(p,a)$;
 \end{itemize}
-Data una parola, il nostro automa potrà trovarsi in uno dei tanti stadi
+Data una parola, il nostro automa potrà trovarsi in uno dei tanti stati
 che siamo andati a calcolare.
