@@ -28,3 +28,21 @@ Anche per i NFA abbiamo una definizione rigorosa:
 \end{itemize}
 Data una parola, il nostro automa potrà trovarsi in uno dei tanti stati
 che siamo andati a calcolare.
+
+\section{Equivalenza tra DFA e NFA}
+NFA e DFA sono in grando di riconoscere gli stessi linguaggi e l'equivalenza si
+dimostra mediante una \textbf{costruzione a sottoinsiemi}. Infatti, dato un NFA
+$N=(Q_N, \Sigma, q_0, \delta_N, F_N)$ costruiremo un DFA $D=(Q_D, \Sigma, {q_0}, 
+\delta_D, F_D)$ tale che L(D)=L(N).
+Ogni stato del DFA, $Q_D$ corrisponde ad un insieme di stati dell'NFA.
+Uno stato del DFA $F_D$ è finale se c'è almeno uno stato finale corrispondente
+all'NFA. La funzione di transizione $\delta_D$ percorre tutte le possibili strade.
+% INSERIRE IMMAGINE EQUIVALENZA
+\begin{thm}
+Sia D il DFA ottenuto da un NFA N con la costruzione a sottoinsiemi. Allora
+L(D)=L(N).
+\end{thm}
+
+\begin{thm}
+Un linguaggio L è accettato da un DFA se e solo se è accettato da un NFA.
+\end{thm}
