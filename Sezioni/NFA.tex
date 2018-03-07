@@ -30,14 +30,24 @@ Data una parola, il nostro automa potrà trovarsi in uno dei tanti stati
 che siamo andati a calcolare.
 
 \section{Equivalenza tra DFA e NFA}
-NFA e DFA sono in grando di riconoscere gli stessi linguaggi e l'equivalenza si
+NFA e DFA sono in grado di riconoscere gli stessi linguaggi e l'equivalenza si
 dimostra mediante una \textbf{costruzione a sottoinsiemi}. Infatti, dato un NFA
 $N=(Q_N, \Sigma, q_0, \delta_N, F_N)$ costruiremo un DFA $D=(Q_D, \Sigma, {q_0}, 
 \delta_D, F_D)$ tale che L(D)=L(N).
 Ogni stato del DFA, $Q_D$ corrisponde ad un insieme di stati dell'NFA.
-Uno stato del DFA $F_D$ è finale se c'è almeno uno stato finale corrispondente
-all'NFA. La funzione di transizione $\delta_D$ percorre tutte le possibili strade.
-% INSERIRE IMMAGINE EQUIVALENZA
+\textit{Uno stato del DFA $F_D$ è finale se c'è almeno uno stato finale
+corrispondente all'NFA}. La funzione di transizione $\delta_D$ percorre tutte le
+possibili strade. Ad esempio: 
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.5]{Immagini/equivalenza1.png}
+\end{figure}
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.5]{Immagini/equivalenza2.png}
+\end{figure}
 
 \begin{thm}
 Sia D il DFA ottenuto da un NFA N con la costruzione a sottoinsiemi. Allora
@@ -51,23 +61,26 @@ Un linguaggio L è accettato da un DFA se e solo se è accettato da un NFA.
 \section{NFA con epsilon-transizioni}
 Le epsilon-transizioni vengono usate per muovere l'automa di stato anche se non
 viene dato nessun simbolo in input.
-Un automa a stati finiti non deterministico con $\varepsilon$-transizioni ($\varepsilon-NFA$)
+Un automa a stati finiti non deterministico con $\varepsilon$\textrm{-transizioni} ($
+\varepsilon\textrm{-NFA}$)
 è una quintupla $A=(Q, \Sigma, \delta, q_0, F)$ dove cambia solo
 
 \begin{itemize}
-\item \textbf{$\delta$} che è una funzione di transizione che prende in input uno stato in
-Q oppure un simbolo nell'alfabeto $\Sigma \cup \{\varepsilon|}$
+\item \textbf{$\delta$} che è una funzione di transizione che prende in input uno 
+stato in Q oppure un simbolo nell'alfabeto $\Sigma \cup \{\varepsilon\}$
 \end{itemize}
 
-L'eliminazione delle $\varepsilon$-transizioni procede per $\varepsilon$-chiusura degli stati,
-cioè prendendo tutti gli stati raggiungibili da q con una sequenza $\varepsilon\varepsilon...
-\varepsilon$. L'$\varepsilon$-chiusura viene indicata con \textbf{ECLOSE(q)}.
+L'eliminazione delle $\varepsilon$-transizioni procede per $\varepsilon$-chiusura 
+degli stati, cioè prendendo tutti gli stati raggiungibili da q con una sequenza $
+\varepsilon\varepsilon... \varepsilon$. L'$\varepsilon$-chiusura viene indicata con 
+\textbf{ECLOSE(q)}.
 
-\section{Equivalenza tra DFA e $\varepsilon$-NFA}
-Per ogni $\varepsilon-$NFA E c'è una DFA D tale che L(E)=L(D), e viceversa.
-Ogni stato del DFA corrisponde ad un insieme di stati chiuso per $\varepsilon$-chiusura.
+\section{Equivalenza tra DFA e $\varepsilon$\textrm{-NFA}}
+Per ogni $\varepsilon$\textrm{-NFA} E c'è una DFA D tale che L(E)=L(D), e viceversa.
+Ogni stato del DFA corrisponde ad un insieme di stati chiuso per 
+$\varepsilon$\textrm{-chiusura}.
 Uno stato del DFA è finale se c'è \textbf{almeno} uno stato finale corrispondente 
-nell'$\varepsilon$-NFA.
+nell'$\varepsilon$\textrm{-NFA}.
 
 
 

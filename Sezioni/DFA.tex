@@ -22,8 +22,8 @@ di transizioni:
 La funzione di transizione prende in input uno stato e una parola dando in output
 una nuova parola. Definizione:
 \begin{itemize}
-\item \textbf{base}: $\delta(q,\varepsilon)=q$ -> ritorna lo stadio in cui è;
-\item \textbf{induzione} $\widehat{\delta}(q,w)=\delta(\widehat{\delta}(q,x),a)$, 
+\item \textbf{base}: $\delta(q,\varepsilon)=q \rightarrow$ ritorna lo stadio in cui è;
+\item \textbf{induzione}: $\widehat{\delta}(q,w)=\delta(\widehat{\delta}(q,x),a)$, 
 dove $\widehat{\delta}$ rappresenta lo stato attuale e $\delta$ lo stato in cui mi 
 troverò, a indica l'ultima lettera della parola che voglio leggere.
 NB: in $\widehat{\delta}$ faccio la ricorsione fino ad arrivare al caso base;
