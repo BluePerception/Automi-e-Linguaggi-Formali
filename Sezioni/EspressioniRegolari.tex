@@ -1,0 +1,52 @@
+\chapter{Espressioni regolari}
+Diciamo che una parola è accettata oppure no in base allo stato in cui giungiamo alla
+fine di questa parola (se sono in uno stato finale, allora si tratta di una parola accettata
+dall'automa altrimenti no).
+Un'espressione regolare è un modo dichiarativo per descrivere un linguaggio regolare.
+Abbiamo diversi tipi di operazioni sui linguaggi:
+
+\begin{itemize}
+\item \textbf{Unione}: $L\cup M=\{w:w \in L oppure w \in M\}$
+\item \textbf{Concatenazione}: $L.M=\{uv : u \in L e v \in M\}$
+\item \textbf{Potenze}: 
+	\begin{itemize}
+	\item $L^{0}=\{\varepsilon\}$
+	\item $L^{1}=L$   
+	\item $L^{k}=L.L...L(k volte)$
+	\end{itemize}
+\item \textbf{Chiusura di Kleene}: hhhh
+\end{itemize}
+
+Inoltre le espressioni regolari sono costruite utilizzando 
+
+\begin{itemize}
+\item un insieme di costanti di base:
+	\begin{itemize}
+	\item $\varepsilon$ per la stringa vuota
+	\item $\emptyset$ per il linguaggio vuoto
+	\item a,b,.. per i simboli $a,b,..\in \Sigma$
+	\end{itemize}
+\item collegati da operatori:
+	\begin{itemize}
+	\item $+$ per l'unione;
+	\item $\cdot$ per la concatenazione;
+	\item $\ast$ per la chiusura di Kleene;
+	\end{itemize}
+\end{itemize}
+
+Esistono anche delle \textbf{regole di precedenza} degli operatori:
+\begin{itemize}
+\item[1]. Chiusura di Kleene;
+\item[2]. Concatenazione;
+\item[3]. Unione;
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
