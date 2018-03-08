@@ -1,0 +1,37 @@
+\chapter{NFA con epsilon-transizioni}
+Le epsilon-transizioni vengono usate per muovere l'automa di stato anche se non
+viene dato nessun simbolo in input.
+Un automa a stati finiti non deterministico con $\varepsilon$\textrm{-transizioni} ($
+\varepsilon\textrm{-NFA}$)
+è una quintupla $A=(Q, \Sigma, \delta, q_0, F)$ dove cambia solo
+
+\begin{itemize}
+\item \textbf{$\delta$} che è una funzione di transizione che prende in input uno 
+stato in Q oppure un simbolo nell'alfabeto $\Sigma \cup \{\varepsilon\}$
+\end{itemize}
+
+L'eliminazione delle $\varepsilon$-transizioni procede per $\varepsilon$-chiusura 
+degli stati, cioè prendendo tutti gli stati raggiungibili da q con una sequenza $
+\varepsilon\varepsilon... \varepsilon$. L'$\varepsilon$-chiusura viene indicata con 
+\textbf{ECLOSE(q)}.
+
+\section{Equivalenza tra DFA e $\varepsilon$\textrm{-NFA}}
+Per ogni $\varepsilon$\textrm{-NFA} E c'è una DFA D tale che L(E)=L(D), e viceversa.
+Ogni stato del DFA corrisponde ad un insieme di stati chiuso per 
+$\varepsilon$\textrm{-chiusura}.
+Uno stato del DFA è finale se c'è \textbf{almeno} uno stato finale corrispondente 
+nell'$\varepsilon$\textrm{-NFA}.
+
+
+\begin{thm}
+Sia $D=(Q_D, \Sigma, S_0, F_D)$ il DFA ottenuto da un $\varepsilon$\textrm{-transizioni}
+E con la costruzione a sottoinsieme modificata. Allora L(D)=L(E).
+\end{thm}
+
+In altre parole, se riusciamo a dimostrare che hanno lo stesso risultato, allora i due
+automi sono equivalenti.
+
+\begin{thm}
+Un linguaggio L è accettato da un DFA se e solo se è accettato da un 
+$\varepsilon$\textrm{-NFA}.
+\end{thm}
