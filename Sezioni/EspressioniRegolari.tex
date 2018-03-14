@@ -41,9 +41,28 @@ Esistono anche delle \textbf{regole di precedenza} degli operatori:
 \item[3]Unione.
 \end{itemize}
 
+\section{Equivalenza tra FA e RE}
+DFA, NFA e $\varepsilon$\textrm{-NFA} sono tutti equivalenti.
 
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.5]{Immagini/equivalenza3.png}
+\end{figure}
 
+Infatti 
+\begin{itemize}
+\item[1] Per ogni espressione regolare \textbf{R} esiste un $\varepsilon$\textrm{-
+NFA}A, tale che L(A)=L(\textbf{R});
+\item[2] Per ogni FA A possiamo costruire un'espressione regolare \textbf{R},
+tale che L(\textbf{R})=L(A).
+\end{itemize}
 
+\section{Conversione per eliminazione di stati}
+Quando uno stato \textbf{q} viene eliminato, i cammini che passano per q scompaiono.
+Quindi si aggiungono nuove transizioni etichettate con espressioni regolari che 
+rappresentano i cammini eliminati. Alla fine otteniamo un'espressione regolare che
+rappresenta tutti i cammini dallo stato iniziale ad uno stato finale, ovvero
+\textbf{il linguaggio riconosciuto dall'automa}.
 
 
 
