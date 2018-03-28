@@ -1,0 +1,99 @@
+\chapter{Grammatiche e linguaggi liberi dal contesto}
+Facciamo subito un esempio con un linguaggio non regolare, quindi libero dal contesto.
+Analizziamo il linguaggio dei palindromi con alfabeto \{0,1\} e per dimostrare che non 
+è regolare usiamo il Pumping Lemma.
+Consideriamo la stringa palindroma $w=0^{n}10^{n}$. Per il lemma possiamo scomporre
+\textit{w} in \textit{w=xyz}, in modo tale che y consista di uno o più 0 del primo
+gruppo. Di conseguenza, \textit{xz}, che dovrebbero trovarsi in $L_{pal}$ se questo 
+fosse regolare, avrebbe meno 0 a sinistra dell'unico 1 rispetto a quello a destra.
+Dunque \textit{xz} non può essere palindroma. 
+Per definire il linguaggio $L_{pal}$ possiamo usare una definizione ricorsiva:
+\begin{itemize}
+\item \textsc{base}: $\varepsilon$, 0 e 1 sono in $L_{pal}$;
+\item \textsc{induzione}: se w è in $L_{pal}$, allora 0w0 e 1w1 sono in $L_{pal}$.
+\end{itemize}
+
+\section{Grammatiche libere dal contesto}
+Il compito della grammatica con le sue regole è uno strumento per generare tutte le
+stringhe del linguaggio libero dal contesto.
+Definizione di grammatica libera da contesto:
+\begin{itemize}
+\item[1.] Insieme finito T di simboli terminali che formano le stringhe del linguaggio
+(per $L_{pal}$, 0 e 1);
+\item[2.] Insieme finito V di variabili (chiamate anche \textit{non terminali}). Ogni
+variabile genera un linguaggio (per $L_{pal}$ c'è solo la variabile P);
+\item[3.] Un simbolo iniziale S che genera il linguaggio da definire (in $L_{pal}$
+coincide con P);
+\item[4.] Un insieme finito (P o R) di produzioni o regole che hanno forma 
+\textbf{$testa \rightarrow corpo$};
+\end{itemize}
+
+La testa della produzione è una variabile che viene definita (parzialmente) 
+dalla produzione mentre il corpo della produzione rappresenta un modo di formare 
+stringhe nel linguaggio della variabile di testa ed è costituita da una stringa di
+zero o più terminali e variabili. Le stringhe si formano lasciando immutati i 
+terminali e sostituendo ogni variabile del corpo con una stringa appartenente al
+linguaggio della variabile stessa.
+\vspace{0.5cm}
+
+Questi 4 componenti formano una grammatica libera dal contesto (CFG) che viene così
+rappresentata: $G=(V,T,P,S)$, dove V è l'insieme delle variabili, T i terminali, 
+P l'insieme delle produzioni ed S il simbolo iniziale).
+Per quanto riguarda alla grammatica del linguaggio delle stringhe palindrome, avremo
+$G_{pal}=(\{P\}, \{0,1\}, A, P)$ dove A rappresenta l'insieme delle produzioni delle
+palindrome:
+\begin{itemize}
+\item[1.] $P \rightarrow \varepsilon$
+\item[2.] $P \rightarrow 0$
+\item[3.] $P \rightarrow 1$
+\item[4.] $P \rightarrow 0P0$
+\item[5.] $P \rightarrow 1P1$
+\end{itemize}
+Notazione compatta per descrivere le regole di produzione: $P \rightarrow \varepsilon
+ | 0 | 1 | 0P0 | 1P1$
+
+\section{Linguaggio di una grammatica}
+Se noi abbiamo una grammatica libera da contesto, questa definirà il linguaggio 
+libero da contesto da cui deriva. Abbiamo due strade per passare dalla grammatica al 
+linguaggio definita dalla grammatica stessa: dalla testa al corpo 
+(\textbf{derivazione}) oppure dal corpo alla testa (\textbf{inferenza ricorsiva}). 
+Sono due maniere opposte per vedere la grammatica definita, ma sono equivalenti tra 
+loro.
+
+\paragraph{Derivazione}
+Viene indicata con $\Rightarrow$ ed indicata la relazione tra due forme sentenziali.
+Viene inoltre definita in questo modo:
+\begin{defn}[Derivazione]
+Sia G=(V, T, R, S) e sia $\alpha$A$\beta$ dove $\alpha$ e $\beta$ sono forme
+sentenziali ed A è in V, sia $A\rightarrow\gamma$ in R, allora $\alpha$A$\beta$
+\begin{itemize}
+\item $\Rightarrow \alpha\gamma\beta$
+\item $\Rightarrow\star$ è la chiusura riflessiva e transitiva della derivazione 
+(significa zero o più passaggi)
+\end{itemize}
+\end{defn}
+
+Riprendendo l'esempio di $G_{pal}$ dove $P\rightarrow\varepsilon|0|1|0P0|1P1$, 
+abbiamo:
+\\[0.3cm]
+$P\Rightarrow 0P0\Rightarrow 00P00 \Rightarrow 001P100 \Rightarrow 0010100$
+\\[0.3cm]
+$P\Rightarrow \star 0010100$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
