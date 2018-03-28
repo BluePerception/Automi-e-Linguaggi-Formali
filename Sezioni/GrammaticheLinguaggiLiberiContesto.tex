@@ -78,7 +78,49 @@ abbiamo:
 \\[0.3cm]
 $P\Rightarrow 0P0\Rightarrow 00P00 \Rightarrow 001P100 \Rightarrow 0010100$
 \\[0.3cm]
-$P\Rightarrow \star 0010100$
+$P\Rightarrow ^{\ast} 0010100$
+
+\subparagraph{Derivazione a destra e a sinistra}
+Per ridurre il numero di scelte possibili nella derivazione di una stringa, spesso
+è comodo imporre che a ogni passo si sostituisca la variabile all'estrema sinistra 
+con il corpo di una delle sue produzioni. Tale derivazione viene detta derivazione a 
+sinistra e si indica tramite $\underset{lm}{\Rightarrow}$ e 
+$\overset{^{\ast}}{\underset{lm}{\Rightarrow}}$, rispettivamente per uno o molti 
+passi. Analogamente vale lo stesso per la derivazione a destra, con i simboli
+$\underset{rm}{\Rightarrow}$ e 
+$\overset{^{\ast}}{\underset{rm}{\Rightarrow}}$.
+
+\paragraph{Inferenza ricorsiva}
+Metodo in cui prendiamo stringhe di cui conosciamo l'appartenenza al linguaggio di 
+ognuna delle variabili del corpo, le concateniamo nell'ordine adeguato, con i 
+terminali che compaiono nel corpo, e deduciamo che la stringa risultante sia nel
+linguaggio della variabile che compare in testa.
+\\[0.2cm]
+Esempio di inferenza ricorsiva di 0010100:
+\\[0.1cm]
+Ricordando che $P\rightarrow\varepsilon|0|1|0P0|1P1$, otteniamo la seguente tabella
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+(i) & 0 & P & 2 & -- \\
+\hline
+(ii) & 101 & P & 5 & (i) \\
+\hline 
+(iii) & 01010 & P & 4 & (ii) \\
+\hline
+(iv) & 0010100 & P & 4 & (iii) \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Forme sentenziali} Le derivazioni dal simbolo iniziale producono stringhe
+che hanno un ruolo importante e che vengono chiamate \textit{forme sentenziali}.
+Se $G=(V, T, P, S)$ è una CFG, allora ogni stringa $\alpha$ in $(V\cup T)^{\ast}$
+tale che $S\stackrel{\ast}\Rightarrow \alpha$ è una forma sentenziale.
+
+
+
 
 
 
