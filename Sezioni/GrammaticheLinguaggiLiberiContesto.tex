@@ -119,6 +119,36 @@ che hanno un ruolo importante e che vengono chiamate \textit{forme sentenziali}.
 Se $G=(V, T, P, S)$ è una CFG, allora ogni stringa $\alpha$ in $(V\cup T)^{\ast}$
 tale che $S\stackrel{\ast}\Rightarrow \alpha$ è una forma sentenziale.
 
+\paragraph{Alberi sintattici}
+Il prodotto di un albero è la concatenazione delle sue foglie. Se in una foglia
+abbiamo $\varepsilon$ questo non è da considerare come un terminale, ma come
+una stringa di terminali (c'è differenza!).
+
+Esistono 5 maniere diverse per definire una grammatica: albero sintattico, 
+derivazione, derivazione a destra, derivazione a sinistra e inferenza ricorsiva.
+Questi modi sono tutti equivalenti tra di loro ed è possibile dimostrarlo 
+(istruttivo, ma non richiesto).
+
+Possono esserci problemi di ambiguità, per esempio:
+\begin{itemize}
+\item $E\Rightarrow E+E\Rightarrow E*E$
+\item $E\Rightarrow E*E\Rightarrow E+E$
+\end{itemize}
+%inserire disegno
+Viene dette ambigua perchè costruisco due alberi differenti che mi danno lo 
+stesso prodotto, ovvero: 1+2*3.
+Se ci sono due alberi diversi, ovviamente ci sono anche due derivazioni leftmost e
+rightmost diverse.
+
+%definizione
+Una CFG G=(V,T,R,S) è ambigua, se esiste una stringa w in T* che appartiene al 
+linguaggio di G e per cui esistono 2 (almeno) alberi di derivazione diversi con w 
+come prodotto.
+
+Si può eliminare l'ambiguità? Non sempre.
+
+
+
 
 
 
